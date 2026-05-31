@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Web - লগইন সিস্টেম</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- লগইন ফর্ম -->
+        <div id="login-form" class="form-container active">
+            <h1>🔐 লগইন করুন</h1>
+            <form onsubmit="handleLogin(event)">
+                <div class="form-group">
+                    <label for="login-email">ইমেইল</label>
+                    <input type="email" id="login-email" placeholder="আপনার ইমেইল" required>
+                </div>
+                <div class="form-group">
+                    <label for="login-password">পাসওয়ার্ড</label>
+                    <input type="password" id="login-password" placeholder="আপনার পাসওয়ার্ড" required>
+                </div>
+                <button type="submit" class="btn btn-primary">লগইন</button>
+                <p class="switch-form">অ্যাকাউন্ট নেই? <a href="#" onclick="toggleForms()">রেজিস্টার করুন</a></p>
+            </form>
+            <div id="login-message" class="message"></div>
+        </div>
+
+        <!-- রেজিস্টার ফর্ম -->
+        <div id="register-form" class="form-container">
+            <h1>📝 রেজিস্টার করুন</h1>
+            <form onsubmit="handleRegister(event)">
+                <div class="form-group">
+                    <label for="register-name">নাম</label>
+                    <input type="text" id="register-name" placeholder="আপনার নাম" required>
+                </div>
+                <div class="form-group">
+                    <label for="register-email">ইমেইল</label>
+                    <input type="email" id="register-email" placeholder="আপনার ইমেইল" required>
+                </div>
+                <div class="form-group">
+                    <label for="register-password">পাসওয়ার্ড</label>
+                    <input type="password" id="register-password" placeholder="শক্তিশালী পাসওয়ার্ড (কমপক্ষে ৬ অক্ষর)" required>
+                </div>
+                <button type="submit" class="btn btn-primary">রেজিস্টার</button>
+                <p class="switch-form">ইতিমধ্যে অ্যাকাউন্ট আছে? <a href="#" onclick="toggleForms()">লগইন করুন</a></p>
+            </form>
+            <div id="register-message" class="message"></div>
+        </div>
+
+        <!-- ড্যাশবোর্ড -->
+        <div id="dashboard" class="dashboard-container">
+            <div class="navbar">
+                <h1>🎉 স্বাগতম!</h1>
+                <button onclick="handleLogout()" class="btn btn-danger">লগআউট</button>
+            </div>
+            <div class="profile-section">
+                <h2>আপনার প্রোফাইল</h2>
+                <div id="user-info" class="user-info">
+                    <!-- ব্যবহারকারী তথ্য এখানে আসবে -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
