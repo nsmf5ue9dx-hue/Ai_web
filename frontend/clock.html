@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ডিজিটাল ক্লক - মাল্টি টাইম জোন</title>
+    <link rel="stylesheet" href="clock-styles.css">
+</head>
+<body>
+    <div class="clock-container">
+        <div class="header">
+            <h1>🕐 বিশ্ব ডিজিটাল ক্লক</h1>
+            <p>বিভিন্ন টাইম জোনে সময় দেখুন</p>
+        </div>
+
+        <div class="controls">
+            <input type="text" id="timezone-input" placeholder="নতুন টাইম জোন যোগ করুন (যেমন: America/New_York)" class="input-field">
+            <button onclick="addTimezone()" class="btn btn-add">➕ যোগ করুন</button>
+            <button onclick="toggleFormat()" class="btn btn-toggle">🔄 ফরম্যাট</button>
+        </div>
+
+        <div class="timezones-grid" id="timezones-grid">
+            <!-- টাইম জোন কার্ড এখানে আসবে -->
+        </div>
+
+        <div class="popular-timezones">
+            <h3>জনপ্রিয় টাইম জোন</h3>
+            <div class="timezone-buttons">
+                <button onclick="quickAddTimezone('Asia/Dhaka')">ঢাকা (UTC+6)</button>
+                <button onclick="quickAddTimezone('Asia/Kolkata')">ভারত (UTC+5:30)</button>
+                <button onclick="quickAddTimezone('Asia/Bangkok')">ব্যাংকক (UTC+7)</button>
+                <button onclick="quickAddTimezone('Asia/Singapore')">সিঙ্গাপুর (UTC+8)</button>
+                <button onclick="quickAddTimezone('America/New_York')">নিউইয়র্ক (UTC-5)</button>
+                <button onclick="quickAddTimezone('Europe/London')">লন্ডন (UTC+0)</button>
+                <button onclick="quickAddTimezone('Europe/Paris')">প্যারিস (UTC+1)</button>
+                <button onclick="quickAddTimezone('Asia/Tokyo')">টোকিও (UTC+9)</button>
+                <button onclick="quickAddTimezone('Australia/Sydney')">সিডনি (UTC+10)</button>
+                <button onclick="quickAddTimezone('Pacific/Auckland')">অকল্যান্ড (UTC+12)</button>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>সংরক্ষিত টাইম জোন: <span id="saved-count">0</span></p>
+            <button onclick="clearAllTimezones()" class="btn btn-danger">🗑️ সব সাফ করুন</button>
+        </div>
+    </div>
+
+    <script src="clock.js"></script>
+</body>
+</html>
